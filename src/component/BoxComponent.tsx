@@ -19,7 +19,7 @@ function BoxComponent({row, column}: Props) {
     return (
         <button className="button-option" onClick={() => dispatch(makeMove(move))}
                 disabled={gameBoard[row][column] === 1 || gameBoard[row][column] === -1}>
-            {gameBoard[row][column] === 1 && <FontAwesomeIcon icon={["fas", "times"]}/>}
+            {gameBoard[row][column] === 1 && <FontAwesomeIcon className={"color-cadetblue"} icon={["fas", "times"]}/>}
             {gameBoard[row][column] === -1 && <FontAwesomeIcon icon={["fas", "o"]}/>}
         </button>
     );

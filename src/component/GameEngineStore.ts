@@ -41,14 +41,14 @@ export const createGame = createSlice({
             state.currentPlayerId = action.payload
         },
         /**
-         * TODO: Validate all cells equipped before changing states
-         * TODO: check game is draw
          * @param state
          * @param action
          */
         makeMove: (state, action: PayloadAction<MakeMove>) => {
             const row = action.payload.row;
             const col = action.payload.column;
+            if (state.board[row][col] )
+                return
             state.board[row][col] = state.currentPlayerId
             ++state.filledCount;
             state.rowSum[row] = state.rowSum[row] ? state.rowSum[row] : 0;
